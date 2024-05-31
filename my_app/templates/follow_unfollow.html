@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if username == None or username == "" %}
+        <h1>{% block title %} Follow User {% endblock %}</h1>
+        <form method="post">
+            <p>Do you want to follow or unfollow someone?</p>
+            <input type="radio" id="follow" name="fstatus" value="follow">
+            <label for="follow">Follow</label><br>
+            
+            <input type="radio" id="unfollow" name="fstatus" value="unfollow">
+            <label for="unfollow">Unfollow</label><br>
+
+            <br>
+            <label for="username">Who do you want to (un)follow?</label>
+            <br>
+            <input type="text" name="username"
+            placeholder=""
+            value="username"></input>
+            <button type="submit">Submit</button>
+        </form>
+    {% elif fstatus == "follow" %}
+        <p>Followed {{ username }}!</p>
+    {% elif fstatus == "unfollow" %}
+        <p>Unfollowed {{ username }}!</p>
+    {% else %}
+        <p>Something went wrong!</p>
+    {% endif %}
+{% endblock %}

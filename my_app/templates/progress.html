@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Your Immigration Progress Tracker! {% endblock %}</h1>
+    <p>Here are the steps you have completed so far:</p>
+    {% for toot in timeline %}
+        <div class='message'>
+            <h3>{{ toot['account']['username'] }}</h3>
+            <p>{{ toot['content'] }}</p>
+            {% if toot['media_attachments'] %}
+            <img src="{{ toot['media_attachments'][0]['url'] }}"></img>
+            {% endif %}
+            <p>{{ toot['url'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

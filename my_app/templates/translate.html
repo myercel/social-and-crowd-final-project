@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Translate! {% endblock %}</h1>
+    <form method="post"> 
+        <p> Please paste the text you want to translate below:</p>
+        <textarea name="text"
+                  placeholder="Content"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['text'] }}</textarea>
+        <br>
+        <p> Which language would you like to translate to?</p>
+        <textarea name="language"
+        placeholder="Language"
+            rows="5"
+            cols="60"
+            >{{ request.form['language'] }}</textarea>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

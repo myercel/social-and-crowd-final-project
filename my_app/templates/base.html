@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <style>
+        .message {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3
+        }
+        nav a {
+            color: #915111;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+            font-family: 'Georgia', serif;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">LAMA</a>
+        <a href="{{ url_for('find_hashtag') }}">Discover</a>
+        <a href="{{ url_for('news') }}">News</a>
+        <a href="{{ url_for('connect') }}">Connect</a>
+        <a href="{{ url_for('update') }}">Update</a>
+        <a href="{{ url_for('myProgress') }}">myProgress</a>
+        <a href="{{ url_for ('translate') }}">Translate</a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if username == None or username == "" %}
+        <h1>{% block title %} Follow User {% endblock %}</h1>
+        <form method="post">
+
+            <label for="username">Who do you want to follow?</label>
+            <br>
+            <input type="text" name="username"
+            placeholder=""
+            value="username"></input>
+            <button type="submit">Submit</button>
+        </form>
+    {% else %}
+        <p>Followed {{ username }}!</p>
+    {% endif %}
+{% endblock %}

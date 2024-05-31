@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if hashtag == None or hashtag == "" %}
+        <h1>{% block title %} Find posts under a #hashtag {% endblock %}</h1>
+        <form method="post">
+
+            <label for="hashtag">Which hashtag do you want to search for?</label>
+            <br>
+            <input type="text" name="hashtag"
+            placeholder=""
+            value=""></input>
+            <button type="submit">Submit</button>
+        </form>
+    {% endif %}
+{% endblock %}

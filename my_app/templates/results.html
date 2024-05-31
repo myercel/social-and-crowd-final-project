@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Translation Results: {% endblock %}</h1>
+    <body>
+        <p><strong>Original Text:</strong> {{ original_text }}</p>
+        <p><strong>Translated Text:</strong> {{ translated_text }}</p>
+        <p><strong>Target Language:</strong> {{ target_language }}</p>
+    </body>
+    </html>
+    
+{% endblock %}

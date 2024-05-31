@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Respond to a Post! {% endblock %}</h1>
+    <h2>Note: Find a post to respond to in Discover or News. Click "Respond."</h2>
+    <form method="post"> 
+        <br>
+        <textarea name="resp"
+                  placeholder="Response content"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['resp'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

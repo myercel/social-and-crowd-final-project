@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Timeline for #immigration: {% endblock %}</h1>
+    {% for toot in timeline %}
+        <div class='message'>
+            <h3>{{ toot['account']['username'] }}</h3>
+            <p>{{ toot['content'] }}</p>
+            {% if toot['media_attachments'] %}
+            <img src="{{ toot['media_attachments'][0]['url'] }}"></img>
+            {% endif %}
+            <p>{{ toot['url'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
